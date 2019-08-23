@@ -132,7 +132,20 @@ const zooAnimals = [{"animal_name":"Jackal, asiatic","population":5,"scientific_
 The zoo wants to display both the scientific name and the animal name in front of the habitats.  Return an array with only the animal and scientific names in it.  The individual values in the array should look like this "Name: Jackal, asiatic, Scientific: Canis aureus."
 
 */
+// let fullNames = [];
+// runners.forEach(
+//   function(run){
+//     fullNames.push(`${run.first_name} ${run.last_name}`)
+//   }
+// );
+// console.log(fullNames);
+
 const animalNames = [];
+zooAnimals.forEach(
+  function(ani){
+    animalNames.push(`Name:${ani.animal_name}, Scientific:${ani.scientific_name}`)
+  }
+);
 console.log(animalNames);
 
 /* Request 2: .map()    
@@ -142,6 +155,12 @@ The zoos need a list of all their animal's names (names only, not scientific) co
 */
 
 const lowerCase = [];
+zooAnimals.map(
+  function(low){
+    let store=low.animal_name.toLowerCase();
+    lowerCase.push(store)
+  }
+);
 console.log(lowerCase); 
 
 /* Request 3: .filter() 
@@ -149,7 +168,11 @@ console.log(lowerCase);
 The zoos are concenred about animals with a lower population count. Find out which animals have a population less than 5.
 
 */
-const lowerPopulation = [];
+const lowerPopulation = zooAnimals.filter(
+  function(num){
+    return num.population < 5;
+  }
+);
 console.log(lowerPopulation);
 
 /* Request 4: .reduce() 
