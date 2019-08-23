@@ -16,17 +16,31 @@ function consume (a,b,cb){
   * Create a function named greeting that accepts a first and last name and returns "Hello first-name last-name, nice to meet you!"
 */
 
+const add = function(a, b){
+  console.log(a + b);
+};
+
+const multiply = function(a, b){
+  console.log(a * b);
+};
+
+const greeting = function(a,b){
+  console.log("Hello " + a + " " + b + ", nice to meet you!");
+};
 
 
 /* Step 3: Check your work by un-commenting the following calls to consume(): */
-// consume(2,2,add); // 4
-// consume(10,16,multiply); // 160
-// consume("Mary","Poppins", greeting); // Hello Mary Poppins, nice to meet you!
+consume(2,2,add); // 4
+consume(10,16,multiply); // 160
+consume("Mary","Poppins", greeting); // Hello Mary Poppins, nice to meet you!
 
 
 // ==== Closures ==== 
 
 // Explain in your own words why `nestedfunction()` can access the variable `internal`.
+
+//Just like a tinted car, one can see outside, but person outside can not see inside (well-tinted car). So, "nestedfunction() can see the variables 
+//outside of it and also inside it."
 
 // Explanation: 
 
